@@ -1,0 +1,192 @@
+@import "customproperties";
+
+/*colores*/
+.c-black {
+    color: var(--black);
+}
+
+.c-white {
+    color: var(--white);
+}
+
+.c-primary {
+    color: var(--color-1);
+}
+.c-secondary {
+    color: var(--color-2);
+}
+
+.c-gray-100 {
+    color: var(--gray--100);
+}
+
+.c-gray-200 {
+    color: var(--gray--200);
+}
+
+.c-gray-300 {
+    color: var(--gray--300);
+}
+
+.c-gray-400 {
+    color: var(--gray--400);
+}
+
+.c-gray-500 {
+    color: var(--gray--500);
+}
+
+.c-gray-600 {
+    color: var(--gray--600);
+}
+
+/*backgrounded*/
+
+.bg-black {
+    background: var(--black);
+}
+
+.bg-white {
+    background: var(--white);
+}
+
+.bg-primary {
+    background: var(--color-1);
+}
+.bg-secondary {
+    background: var(--color-2);
+}
+
+.bg-gray-100 {
+    background: var(--gray--100);
+}
+
+.bg-gray-200 {
+    background: var(--gray--200);
+}
+
+.bg-gray-300 {
+    background: var(--gray--300);
+}
+
+.bg-gray-400 {
+    background: var(--gray--400);
+}
+
+.bg-gray-500 {
+    background: var(--gray--500);
+}
+
+.bg-gray-600 {
+    background: var(--gray--600);
+}
+
+/*border-radius*/
+
+.br-10 {
+    border-radius: 10px;
+}
+
+.br-20 {
+    border-radius: 20px;
+}
+
+.br-50 {
+    border-radius: 50px;
+}
+
+.br-full {
+    border-radius: 50%;
+}
+
+/*Espaciados (Margin y padding)*/
+
+@each $space in $list-space {
+    .m-#{$i} {
+        margin: #{$space}px;
+    };
+
+    .p-#{$i} {
+        padding: #{$space}px;
+    };
+    @if $i <= 8 {
+        $i: $i + 1;
+    }
+    @else {
+        $i: 0;
+    }
+};
+
+@each $pos,$pref in $list-position {
+    @each $space in $list-space {
+        .m#{$pref}-#{$i} {
+            margin-#{$pos}: #{$space}px;
+        };
+
+        .p#{$pref}-#{$i} {
+            padding-#{$pos}: #{$space}px;
+        };
+        @if $i <= 8 {
+            $i: $i + 1;
+        }
+        @else {
+            $i: 0;
+        }
+    };
+    
+}
+
+/*tipografia y tamaño de textos*/
+
+@each $size,$val in $list-font {
+    .fz-#{$size} {
+        font-size: #{$val}px;
+    }
+}
+
+@for $var from 0 to 10 {
+    .w-#{$var}0 {
+        width: $var*10%;
+    }
+}
+
+/*Generales*/
+
+h1, h2, h3, h4, h5, h6, p, ul, li, a, span, table, input {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+}
+
+img {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-right {
+    text-align: right
+}
+
+.text-left {
+    text-align: right
+}
+
+.fw-normal {
+    font-weight: normal;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.logo {
+    width: 200px;
+}
+
+@import "bem";
