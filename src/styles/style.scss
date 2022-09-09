@@ -103,11 +103,11 @@
 
 @each $space in $list-space {
     .m-#{$i} {
-        margin: #{$space}px;
+        margin: var(--space-#{$i});
     };
 
     .p-#{$i} {
-        padding: #{$space}px;
+        padding: var(--space-#{$i});
     };
     @if $i <= 8 {
         $i: $i + 1;
@@ -120,11 +120,11 @@
 @each $pos,$pref in $list-position {
     @each $space in $list-space {
         .m#{$pref}-#{$i} {
-            margin-#{$pos}: #{$space}px;
+            margin-#{$pos}: var(--space-#{$i});
         };
 
         .p#{$pref}-#{$i} {
-            padding-#{$pos}: #{$space}px;
+            padding-#{$pos}: var(--space-#{$i});
         };
         @if $i <= 8 {
             $i: $i + 1;
@@ -140,7 +140,7 @@
 
 @each $size,$val in $list-font {
     .fz-#{$size} {
-        font-size: #{$val}px;
+        font-size: var(--sf-#{$size});
     }
 }
 
